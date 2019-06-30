@@ -10,7 +10,7 @@ const forecast = (lat, long, callback) => {
             callback ('Unable to find location', undefined)
         } else {
             const rain = body.daily.data[0].precipProbability * 100
-            callback(undefined, body.daily.data[0].summary + ' High of ' + body.daily.data[0].temperatureHigh + ', and a Low of ' + body.daily.data[0].temperatureLow + ' Currently ' + body.currently.temperature + ', with a ' + rain.toFixed(2) +'% chance of rain.')
+            callback(undefined, body.daily.data[0].summary + ' High of ' + body.daily.data[0].temperatureHigh + ', and a Low of ' + body.daily.data[0].temperatureLow + '. Currently ' + body.currently.temperature + ', with a heat index of ' + body.currently.apparentTemperature + '. A ' + rain.toFixed(2) +'% chance of rain.')
             //callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain')
         } 
     })
